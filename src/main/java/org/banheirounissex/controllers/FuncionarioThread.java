@@ -9,32 +9,11 @@ import java.util.concurrent.Callable;
 public class FuncionarioThread implements Callable {
     private FuncionarioModel funcionario;
     private BanheiroUnissexController banheiro;
-
-//    @Override
-//    public void run() {
-//        String threadName = String.valueOf(Thread.currentThread().getId());
-//        try {
-//            System.out.println("("+threadName+") Funcionario " + funcionario + " entrou na fila.");
-//            //Thread.sleep(200);
-//
-//            banheiro.entrarNoBanheiro(funcionario);
-//
-//            System.out.println(threadName + " " + funcionario + " usando o banheiro: " + funcionario.getTempoNoBanheiro()/1000 + "s");
-//            funcionario.usarBanheiro();
-//
-//            System.out.println(threadName + " " + funcionario + " saiu do banheiro: " + funcionario.getTempoNoBanheiro()/1000 + "s");
-//            banheiro.sairDoBanheiro(funcionario);
-//        } catch (InterruptedException e) {
-//            System.out.println("Thread interrompida!");
-//        }
-//    }
-
     @Override
-    public Object call() throws Exception {
+    public Object call(){
         String threadName = String.valueOf(Thread.currentThread().getId());
         try {
             System.out.println("("+threadName+") Funcionario " + funcionario + " entrou na fila.");
-            //Thread.sleep(200);
 
             banheiro.entrarNoBanheiro(funcionario);
 
